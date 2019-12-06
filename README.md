@@ -1,8 +1,13 @@
 ## Lite tube
 Simple project using YouTube API to search and play public videos
 
-using typescript
-
+tech used: 
+- React JS
+- Typescript
+- Styled Components
+- eslint
+- TravisCI
+- Heroku
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
