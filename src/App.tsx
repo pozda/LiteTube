@@ -1,7 +1,5 @@
 import React from 'react'
 
-const variable = 2
-
 const App: React.FC = () => (
     <div>
         <header>

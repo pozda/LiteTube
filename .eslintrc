@@ -14,6 +14,13 @@
         "eslint:recommended",
         "plugin:react/recommended"
     ],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        },
+        "linkComponents": ["Hyperlink", {"name": "Link", "linkAttribute": "to"}]
+    },
     "rules": {
         "semi": ["error", "never"],
         "quotes": [2, "single"],
