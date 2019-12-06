@@ -1,16 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 
-const App: React.FC = () => {
-  return (
+const App: React.FC = () => (
     <div>
-      <header>
-        <p>
+        <header>
+            <p>
           Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
+            </p>
+        </header>
     </div>
-  );
-}
+)
 
-export default App;
+export default App
