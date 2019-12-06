@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore --fix"
+    "pretest": "./node_modules/.bin/eslint --ignore-path .gitignore --ext .tsx --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
