@@ -7,9 +7,6 @@ const App: React.FC = () => (
                 Edit <code>src/App.tsx</code> and save to reload.
             </p>
         </header>
-        <footer>
-            dfdsf
-        </footer>
     </div>
 )
 
