@@ -68,7 +68,7 @@ const App: React.FC = () => {
                                 />
                             )}
                         />
-{/*
+                        {/*
                     <Route 
                         {...routes.search}
                         render={(searchResults: VideoListInterface) => <ListPage videoList={searchResults} listType={'details'} title={appConstants.title.SEARCH_RESULTS} />} 
