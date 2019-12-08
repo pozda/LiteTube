@@ -32,6 +32,7 @@
         "arrow-body-style": ["error", "as-needed"],
         "max-len": ["warn", {"code": 120}],
         "object-curly-spacing": ["warn", "never"],
-        "no-invalid-this": ["off"]
+        "no-invalid-this": ["off"],
+        "no-unused-vars":["warn"]
     }
 }

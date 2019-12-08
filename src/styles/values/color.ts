@@ -2,6 +2,7 @@
 export default {
     shade: {
         WHITE: '#FFFFFF', // white rgb(255,255,255)
+        WHITEY: '#EDF2F4', // anti-flash-white
         NEUTRAL: '#BCBDC8', // ghost
         DARK: '#46495D', // blue zodiac, rgb(70,73,93)
         DARK05: 'rgba(70,73,93,0.5)', // blue zodiac

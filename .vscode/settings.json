@@ -3,5 +3,15 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "javascript.preferences.importModuleSpecifier": "non-relative",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "typescript.preferences.importModuleSpecifier": "non-relative"
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "javascript.validate.enable": false,
+    "typescript.validate.enable": false,
+    "[typescript]": {
+        "editor.formatOnSave": false,
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": false,
+    }
 }
