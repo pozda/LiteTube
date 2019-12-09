@@ -37,7 +37,6 @@ const VideoPage = ({listType, videoList, setSelectedVideo, videoListFromSearch}:
     const nextVideo = listOfVideoIds[currentVideo+1]
     const prevVideo = listOfVideoIds[currentVideo-1]
     const title = videoListFromSearch ? appConstants.title.SEARCH_RESULTS : appConstants.title.POPULAR_VIDEOS
-    const currentVideoData = listOfVideos.items.find(video => video.id === videoId)
 
     const fetchSingleVideo = (id: string) => {
         const config = getVideoByIdSchema(id)
