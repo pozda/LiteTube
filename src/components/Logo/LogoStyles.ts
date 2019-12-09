@@ -5,8 +5,12 @@ const StyledLogoWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
+    width: 24px;
     transition: ${styles.transition.PRIMARY};
+    @media(min-width: 460px){
+        width: 110px;
+    }
+
     & svg path {
         fill: ${styles.color.brand.PRIMARY};
         transition: ${styles.transition.PRIMARY};
@@ -29,8 +33,13 @@ const StyledLogoWrapper = styled.div`
 `
 
 const StyledLogoText = styled.span`
-    margin-left: 3px;
-    font-size: ${styles.typographyScale.TYPE20};
+    display: none;
+    @media(min-width:460px) {
+        display:block;
+        margin-left: 3px;
+        font-size: ${styles.typographyScale.TYPE20};
+    }
+
 `
 
 export {

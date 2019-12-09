@@ -3,11 +3,8 @@ import {StyledPromobar} from './PromobarStyles'
 import {Icon} from 'components'
 
 const Logo = () => 
-    <StyledPromobar>
-        <Icon d={Icon.res.LOGO} />
-        <Icon d={Icon.res.LOGO} />
-        <Icon d={Icon.res.LOGO} />
-        <Icon d={Icon.res.LOGO} />
+    <StyledPromobar href={'https://github.com/pozda/LiteTube'} title={'See the code on GitHub'}>
+        <Icon d={Icon.res.GITHUB} />
     </StyledPromobar>
 
 export default Logo

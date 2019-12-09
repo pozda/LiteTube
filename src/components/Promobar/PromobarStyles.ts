@@ -1,11 +1,19 @@
 import styled from 'styled-components'
+import styles from 'styles/values'
 
-const StyledPromobar = styled.div`
+const StyledPromobar = styled.a`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 150px;
-    border: 1px solid green;
+    
+    svg path { 
+        transition: ${styles.transition.PRIMARY};
+        fill: ${styles.color.shade.DARK05};
+    }
+
+    :hover {
+        svg path { fill: ${styles.color.shade.DARK};}
+    }
 `
 
 export {StyledPromobar}

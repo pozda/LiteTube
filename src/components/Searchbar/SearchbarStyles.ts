@@ -53,6 +53,9 @@ const StyledSearchbarField = styled.input`
             border: 1px solid ${styles.color.shade.DARK};
         }
     }
+    @media(min-width: 768px){
+        width: 580px;
+    }
 `
 
 export {
