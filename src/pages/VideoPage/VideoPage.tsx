@@ -49,11 +49,17 @@ const VideoPage = ({listType, videoList, setSelectedVideo, videoListFromSearch}:
             <StyledVideoPageVideoWrapper>
                 <YouTube videoId={videoId} id={videoId}/>
                 <StyledNavigation>
-                    <StyledNavigationButton disabled={currentVideo===0} onClick={() => setSelectedVideo(prevVideo)}>
-                    &lt; prev
+                    <StyledNavigationButton 
+                        disabled={currentVideo===0}
+                        onClick={() => setSelectedVideo(prevVideo)}
+                    >
+                        &lt; prev
                     </StyledNavigationButton>
                     
-                    <StyledNavigationButton disabled={currentVideo===listOfVideoIds.length-1} onClick={() => setSelectedVideo(nextVideo)}>
+                    <StyledNavigationButton 
+                        disabled={currentVideo===listOfVideoIds.length-1}
+                        onClick={() => setSelectedVideo(nextVideo)}
+                    >
                         next &gt;
                     </StyledNavigationButton>
                 </StyledNavigation>
