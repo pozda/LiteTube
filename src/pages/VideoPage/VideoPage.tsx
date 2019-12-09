@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import YouTube from 'react-youtube'
-import {VideoListInterface, VideoInterface} from 'interfaces/Video'
+import {VideoListInterface} from 'interfaces/Video'
 import {VideoList} from 'components'
 import appConstants from 'utils/appConstants'
 import {
@@ -12,7 +12,6 @@ import {
     StyledVideoTitle,
     StyledVideoDescription
 } from './VideoPageStyles'
-import {StyledLoadingWrapper} from 'components/Loading/LoadingStyles'
 
 interface Props {
     listType: 'block' | 'sidebar',

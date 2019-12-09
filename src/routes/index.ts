@@ -1,5 +1,3 @@
-import React from 'react'
-
 export interface RouteConfig {
     id: string,
     path: string,
@@ -35,10 +33,3 @@ const routes: {
 }
 
 export default routes
-
-/* link example for getPathWithparams
-<Link
-    key={video.id}
-    className={classes.listItemLink}
-    to={routes.video.getPathWithParams?.(video.id)}>
-*/
