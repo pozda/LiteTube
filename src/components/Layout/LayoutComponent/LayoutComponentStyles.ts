@@ -21,9 +21,7 @@ const StyledLayoutHeader = styled.div`
 
 const StyledLayoutMain = styled.div`
     display: flex;
-    min-height: calc(100vh - ${styles.size.HEADER});
     padding-top: ${styles.size.HEADER};
-    background-color: ${styles.color.shade.WHITEY};
 `
 
 export {

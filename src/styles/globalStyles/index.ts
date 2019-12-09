@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${styles.font.PRIMARY};
     margin: 0;
     color: ${styles.color.shade.DARK};
+    background-color: ${styles.color.shade.WHITEY};
   }
   * {
     box-sizing: border-box;

@@ -29,8 +29,8 @@ const routes: {
     video: {
         id: 'video',
         name: 'Video',
-        path: '/video/:id',
-        getPathWithParams: (id: string) => `/video/${id}`
+        path: '/video/:videoId',
+        getPathWithParams: (videoId: string) => `/video/${videoId}`
     }
 }
 

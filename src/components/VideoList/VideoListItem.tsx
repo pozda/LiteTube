@@ -16,9 +16,10 @@ import routes from 'routes'
 
 interface Props {
     video: VideoInterface,
+    setSelectedVideo: (videoId: string) => void
 }
 
-const VideoListItem = ({video}: Props) => {
+const VideoListItem = ({video, setSelectedVideo}: Props) => {
     const videoDuration = moment
         .duration(video.contentDetails.duration)
         .format(appConstants.duration.FORMAT)
@@ -27,12 +28,16 @@ const VideoListItem = ({video}: Props) => {
     const defaultImage = video.snippet.thumbnails?.maxres?.url
     const highImage = video.snippet.thumbnails?.high?.url
     const standardImage = video.snippet.thumbnails?.standard?.url
+    const videoTitle =video.snippet.title.length > 60
+        ? video.snippet.title.substring(0,57) + '...'
+        : video.snippet.title
 
     return (
         <StyledVideoListItem>
             <Link
                 key={video.id}
                 to={routes.video.getPathWithParams?.(video.id)}
+                onClick={() => setSelectedVideo(video.id)}
             >
                 <StyledVideoListThumbnailWrapper>
                     {
@@ -53,7 +58,7 @@ const VideoListItem = ({video}: Props) => {
                     }
                 </StyledVideoListThumbnailWrapper>
                 <StyledVideoListItemTitle>
-                    {video.snippet.title}
+                    {videoTitle}
                 </StyledVideoListItemTitle>    
             </Link>
         </StyledVideoListItem>

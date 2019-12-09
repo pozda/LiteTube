@@ -7,11 +7,11 @@ interface Props {
     listType: 'block' | 'sidebar',
     title: string
     videoList: VideoListInterface,
+    setSelectedVideo: (videoId: string) => void
 }
 
-const ListPage = ({listType, title, videoList}: Props) => {
+const ListPage = ({listType, title, videoList, setSelectedVideo}: Props) => {
     const history = useHistory()
-    console.log(videoList)
 
     if(videoList === undefined) {
         history.push('/')
@@ -22,6 +22,7 @@ const ListPage = ({listType, title, videoList}: Props) => {
                 title={title}
                 listType={listType}
                 videoList={videoList}
+                setSelectedVideo={setSelectedVideo}
             />
         )
     }
