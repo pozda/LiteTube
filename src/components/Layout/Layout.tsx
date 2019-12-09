@@ -10,13 +10,14 @@ interface Props {
     children: React.ReactNode,
     handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
     handleSearchSubmit: () => void,
+    query: string
 }
 
-const Layout = ({children, handleSearchChange, handleSearchSubmit}: Props) => (
+const Layout = ({children, handleSearchChange, handleSearchSubmit, query}: Props) => (
     <LayoutComponent>
         <LayoutComponent.Header>
             <Logo />
-            <Searchbar onChange={handleSearchChange} onClick={handleSearchSubmit} />
+            <Searchbar onChange={handleSearchChange} onClick={handleSearchSubmit} query={query} />
             <Promobar />        
         </LayoutComponent.Header>
 

@@ -23,8 +23,8 @@ const routes: {
     search: {
         id: 'searchResults',
         name: 'Search results',
-        path: '/search-results/',
-        exact: false
+        path: '/search',
+        exact: true
     },
     video: {
         id: 'video',

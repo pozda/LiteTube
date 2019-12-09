@@ -6,8 +6,6 @@ const StyledLogoWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100px;
-    cursor: pointer;
-    color: ${styles.color.shade.DARK};
     transition: ${styles.transition.PRIMARY};
     & svg path {
         fill: ${styles.color.brand.PRIMARY};
@@ -18,6 +16,15 @@ const StyledLogoWrapper = styled.div`
         svg path {
             fill: ${styles.color.brand.PRIMARY_HOVER};
         }
+        a {
+            color: ${styles.color.shade.DARK05};
+        }
+    }
+    & a {
+        display: flex;
+        color: ${styles.color.shade.DARK};
+        text-decoration: none;
+        transition: ${styles.transition.PRIMARY};
     }
 `
 

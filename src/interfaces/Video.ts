@@ -48,3 +48,13 @@ export interface VideoListInterface {
     };
     items: VideoInterface[];
 }
+export interface VideoIdItem {
+    id: {
+        videoId: string
+    }
+}
+
+export interface VideoIdListInterface {
+    kind: string,
+    items: VideoIdItem[]
+}

@@ -16,7 +16,7 @@ export default {
         SEARCH: 'Search'
     },
     title: {
-        LATEST_VIDEOS: 'Latest videos',
+        POPULAR_VIDEOS: 'Popular videos',
         SEARCH_RESULTS: 'Search results'
     }
 } 

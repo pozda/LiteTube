@@ -7,7 +7,7 @@ const StyledSearchbar = styled.div`
     align-items: center;
 `
 
-const StyledSearchbarIconWrapper = styled.div`
+const StyledSearchbarIconWrapper = styled.div<{disabled: boolean}>`
     position: absolute;
     top: 0;
     right: 0;
@@ -16,10 +16,10 @@ const StyledSearchbarIconWrapper = styled.div`
     align-items: center;
     width: 32px;
     height: 32px;
-    cursor: pointer;
     border: 1px solid ${styles.color.shade.NEUTRAL};
     background-color: ${styles.color.shade.NEUTRAL};
     transition: ${styles.transition.PRIMARY};
+    ${props => !props.disabled && 'cursor: pointer;'}
     svg {
         path {
             fill: ${styles.color.shade.DARK};
@@ -27,12 +27,15 @@ const StyledSearchbarIconWrapper = styled.div`
         }
     }
     &:hover {
+        ${props => !props.disabled && `
         background-color: ${styles.color.shade.DARK};
         svg {
             path {
                 fill: ${styles.color.shade.WHITE};
             }
         }
+        `}
+        
     }
 `
 
