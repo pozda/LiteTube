@@ -86,12 +86,19 @@ const App: React.FC = () => {
         getListOfSearchedVideos()
     }
 
+    const handleEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === 'Enter' && query.length > 0){
+            handleSearchSubmit()
+        }
+    }
+
     return(
         <>
             <GlobalStyles /> 
             <Layout 
                 handleSearchChange={handleSearchChange} 
                 handleSearchSubmit={handleSearchSubmit}
+                handleEnterKey={handleEnterKey}
                 query={query}
             >
                 {
