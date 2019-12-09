@@ -52,3 +52,17 @@ export const getVideosByIdSchema = (listofIds: string) => {
         }
     }
 }
+
+export const getVideoByIdSchema = (videoId: string) => {
+    const id = videoId
+    const part = 'snippet'
+    return {
+        method: appConstants.apiMethods.GET,
+        url: `${Config.baseUrl}/videos`,
+        params: {
+            part,
+            id,
+            key
+        }
+    }
+}

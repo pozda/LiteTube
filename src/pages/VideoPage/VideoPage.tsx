@@ -1,6 +1,7 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import YouTube from 'react-youtube'
+import {AxiosResponse} from 'axios'
 import {VideoListInterface} from 'interfaces/Video'
 import {VideoList} from 'components'
 import appConstants from 'utils/appConstants'
@@ -12,6 +13,10 @@ import {
     StyledVideoTitle,
     StyledVideoDescription
 } from './VideoPageStyles'
+import { 
+    getVideoByIdSchema 
+} from 'network/Requests'
+import NetworkService from 'network/NetworkService'
 
 interface Props {
     listType: 'block' | 'sidebar',
@@ -21,7 +26,9 @@ interface Props {
 }
 
 const VideoPage = ({listType, videoList, setSelectedVideo, videoListFromSearch}: Props) => {
-    let {videoId} = useParams()
+    const networkService = new NetworkService()
+    const [singleVideo, setSingleVideo] = useState()
+    const {videoId} = useParams()
     const listOfVideoIds = videoListFromSearch
         ? Array.from(videoListFromSearch.items, item => item.id) 
         : Array.from(videoList.items, item => item.id)
@@ -32,7 +39,18 @@ const VideoPage = ({listType, videoList, setSelectedVideo, videoListFromSearch}:
     const title = videoListFromSearch ? appConstants.title.SEARCH_RESULTS : appConstants.title.POPULAR_VIDEOS
     const currentVideoData = listOfVideos.items.find(video => video.id === videoId)
 
-    useEffect(()=>{},[videoId])
+    const fetchSingleVideo = (id: string) => {
+        const config = getVideoByIdSchema(id)
+        networkService.makeRequest(config)
+            .then((response: AxiosResponse<VideoListInterface>) => {
+                const video = response.data.items[0]
+                setSingleVideo(video)
+            })
+    }
+
+    useEffect(()=>{
+        fetchSingleVideo(videoId!)
+    },[videoId])
 
 
     function ScrollToTopOnMount() {
@@ -63,8 +81,8 @@ const VideoPage = ({listType, videoList, setSelectedVideo, videoListFromSearch}:
                         next &gt;
                     </StyledNavigationButton>
                 </StyledNavigation>
-                <StyledVideoTitle>{currentVideoData?.snippet?.title}</StyledVideoTitle>
-                <StyledVideoDescription>{currentVideoData?.snippet?.description}</StyledVideoDescription>
+                <StyledVideoTitle>{singleVideo?.snippet?.title}</StyledVideoTitle>
+                <StyledVideoDescription>{singleVideo?.snippet?.description}</StyledVideoDescription>
             </StyledVideoPageVideoWrapper>
             <VideoList
                 title={title}
