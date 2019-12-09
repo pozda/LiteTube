@@ -5,7 +5,7 @@ import {
     StyledVideoListTitle,
     StyledVideoListWrapper
 } from './VideoListStyles'
-import {VideoListItem} from 'components'
+import {VideoListItem, Loading} from 'components'
 
 interface Props {
     listType: string,
@@ -15,21 +15,21 @@ interface Props {
 }
 
 const VideoList = ({listType, title, videoList, setSelectedVideo}: Props) => (
-    <StyledVideoListWrapper listType={listType}>
-        <StyledVideoListTitle>
-            {title}
-        </StyledVideoListTitle>
-        <StyledVideoList listType={listType}>
-            {/* <StyledVideoListTitle>
+    videoList !== undefined ?
+        <StyledVideoListWrapper listType={listType}>
+            <StyledVideoListTitle>
                 {title}
-            </StyledVideoListTitle>   */}  
-            {
-                videoList.items.map((video: VideoInterface) => (
-                    <VideoListItem video={video} key={video.id} setSelectedVideo={setSelectedVideo} />
-                ))
-            }
-        </StyledVideoList>
-    </StyledVideoListWrapper>
+            </StyledVideoListTitle>
+            <StyledVideoList listType={listType}>
+                {
+                    videoList.items.map((video: VideoInterface) => (
+                        <VideoListItem video={video} key={video.id} setSelectedVideo={setSelectedVideo} />
+                    ))
+                }
+            </StyledVideoList>
+        </StyledVideoListWrapper>
+        :  <Loading />
+
 )
 
 export default VideoList

@@ -1,7 +1,7 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
 import {VideoListInterface} from 'interfaces/Video'
-import {VideoList} from 'components'
+import {VideoList, Loading} from 'components'
 
 interface Props {
     listType: 'block' | 'sidebar',
@@ -15,7 +15,7 @@ const ListPage = ({listType, title, videoList, setSelectedVideo}: Props) => {
 
     if(videoList === undefined) {
         history.push('/')
-        return <div>loading</div>
+        return <Loading />
     } else {
         return (
             <VideoList

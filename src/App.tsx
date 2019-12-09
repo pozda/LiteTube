@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Redirect, Route, Switch, useHistory} from 'react-router-dom'
 import {AxiosResponse} from 'axios'
 import routes from 'routes'
-import {Layout} from 'components'
+import {Layout, Loading} from 'components'
 import ListPage from 'pages/ListPage/ListPage'
 import VideoPage from 'pages/VideoPage/VideoPage'
 import {
@@ -49,7 +49,6 @@ const App: React.FC = () => {
         if(selectedVideo !== undefined) {
             history.push(`/video/${selectedVideo}`)
         }
-        console.log(selectedVideo)
     },[selectedVideo])
 
 
@@ -74,7 +73,6 @@ const App: React.FC = () => {
                 return res
             })
             .then((res) => {
-                console.log(res)
                 fetchVideosByIdList(res)
             })
     }
@@ -90,51 +88,52 @@ const App: React.FC = () => {
 
     return(
         <>
-            <GlobalStyles />
+            <GlobalStyles /> 
             <Layout 
                 handleSearchChange={handleSearchChange} 
                 handleSearchSubmit={handleSearchSubmit}
                 query={query}
             >
-                {latestVideos!==undefined ?
-                    <Switch>
-                        <Route exact
-                            {...routes.latest} 
-                            render={() => (
-                                <ListPage
-                                    videoList={latestVideos} 
-                                    listType={'block'} 
-                                    title={appConstants.title.POPULAR_VIDEOS}
-                                    setSelectedVideo={setSelectedVideo}
-                                />
-                            )}
-                        />
-                    
-                        <Route exact
-                            {...routes.search}
-                            render={() => (
-                                <ListPage 
-                                    videoList={searchResults} 
-                                    listType={'block'} 
-                                    title={appConstants.title.SEARCH_RESULTS}
-                                    setSelectedVideo={setSelectedVideo} 
-                                />
-                            )} 
-                        />
-                        <Route
-                            {...routes.video}
-                            render={() => (
-                                <VideoPage 
-                                    videoList={latestVideos}
-                                    videoListFromSearch={searchResults}
-                                    listType={'sidebar'}
-                                    setSelectedVideo={setSelectedVideo}
-                                />
-                            )} 
-                        />
-                        <Redirect to={routes.latest.path} /> 
-                    </Switch>
-                    : 'loading'
+                {
+                    latestVideos !== undefined 
+                        ? <Switch>
+                            <Route exact
+                                {...routes.latest} 
+                                render={() => (
+                                    <ListPage
+                                        videoList={latestVideos} 
+                                        listType={'block'} 
+                                        title={appConstants.title.POPULAR_VIDEOS}
+                                        setSelectedVideo={setSelectedVideo}
+                                    />
+                                )}
+                            />
+                        
+                            <Route exact
+                                {...routes.search}
+                                render={() => (
+                                    <ListPage 
+                                        videoList={searchResults} 
+                                        listType={'block'} 
+                                        title={appConstants.title.SEARCH_RESULTS}
+                                        setSelectedVideo={setSelectedVideo} 
+                                    />
+                                )} 
+                            />
+                            <Route
+                                {...routes.video}
+                                render={() => (
+                                    <VideoPage 
+                                        videoList={latestVideos}
+                                        videoListFromSearch={searchResults}
+                                        listType={'sidebar'}
+                                        setSelectedVideo={setSelectedVideo}
+                                    />
+                                )} 
+                            />
+                            <Redirect to={routes.latest.path} /> 
+                        </Switch>
+                        : <Loading />
                 }
             </Layout>       
         </>
