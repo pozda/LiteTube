@@ -111,7 +111,6 @@ const StyledVideoListTitle = styled.h1`
     font-weight: ${styles.fontWeight.REGULAR};
     font-size: ${styles.typographyScale.TYPE20};
     display: flex;
-    width: 100%;
     margin: 12px 18px 0;
     line-height: 1;
 `
