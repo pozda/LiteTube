@@ -12,7 +12,7 @@ import {
     StyledVideoTitle,
     StyledVideoDescription
 } from './VideoPageStyles'
-import { StyledLoadingWrapper } from 'components/Loading/LoadingStyles'
+import {StyledLoadingWrapper} from 'components/Loading/LoadingStyles'
 
 interface Props {
     listType: 'block' | 'sidebar',

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import LayoutComponent from './LayoutComponent/LayoutComponent'
 import {
     Logo,
