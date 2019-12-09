@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import LayoutComponent from './LayoutComponent/LayoutComponent'
 import {
     Logo,
@@ -20,7 +20,6 @@ const Layout = ({children, handleSearchChange, handleSearchSubmit, query}: Props
             <Searchbar onChange={handleSearchChange} onClick={handleSearchSubmit} query={query} />
             <Promobar />        
         </LayoutComponent.Header>
-
         <LayoutComponent.Main>            
             {children}
         </LayoutComponent.Main>

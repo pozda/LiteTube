@@ -12,6 +12,7 @@ import {
     StyledVideoTitle,
     StyledVideoDescription
 } from './VideoPageStyles'
+import { StyledLoadingWrapper } from 'components/Loading/LoadingStyles'
 
 interface Props {
     listType: 'block' | 'sidebar',
@@ -34,8 +35,18 @@ const VideoPage = ({listType, videoList, setSelectedVideo, videoListFromSearch}:
 
     useEffect(()=>{},[videoId])
 
+
+    function ScrollToTopOnMount() {
+        useEffect(() => {
+            window.scrollTo(0, 0)
+        }, [])
+      
+        return null
+    }
+
     return (
         <StyledVideoPageWrapper>
+            <ScrollToTopOnMount />
             <StyledVideoPageVideoWrapper>
                 <YouTube videoId={videoId} id={videoId}/>
                 <StyledNavigation>

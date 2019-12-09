@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import {VideoListInterface} from 'interfaces/Video'
 import {VideoList, Loading} from 'components'
@@ -10,6 +10,14 @@ interface Props {
     setSelectedVideo: (videoId: string) => void
 }
 
+function ScrollToTopOnMount() {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+  
+    return null
+}
+
 const ListPage = ({listType, title, videoList, setSelectedVideo}: Props) => {
     const history = useHistory()
 
@@ -18,12 +26,17 @@ const ListPage = ({listType, title, videoList, setSelectedVideo}: Props) => {
         return <Loading />
     } else {
         return (
-            <VideoList
-                title={title}
-                listType={listType}
-                videoList={videoList}
-                setSelectedVideo={setSelectedVideo}
-            />
+            <>
+                <ScrollToTopOnMount />
+                <VideoList
+                    title={title}
+                    listType={listType}
+                    videoList={videoList}
+                    setSelectedVideo={setSelectedVideo}
+                />
+            </>
+
+            
         )
     }
 }
