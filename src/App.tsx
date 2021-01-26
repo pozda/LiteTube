@@ -7,7 +7,6 @@ import ListPage from 'pages/ListPage/ListPage'
 import VideoPage from 'pages/VideoPage/VideoPage'
 import {
     VideoListInterface,
-    VideoInterface,
     VideoIdListInterface,
     VideoIdItem
 } from 'interfaces/Video'
@@ -36,7 +35,7 @@ const App: React.FC = () => {
         const config = getLatestVideosSchema()
         networkService.makeRequest(config)
             .then((response: AxiosResponse<VideoListInterface>) => {
-                const videos = response.data
+                const videos: VideoIdListInterface = response.data
                 setLatestVideos(videos)
             })
     }

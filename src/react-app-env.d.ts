@@ -1,5 +1,5 @@
 /// <reference types="react-scripts" />
-import * as moment from 'moment'
+//import * as moment from 'moment'
 
 declare module 'moment' {
     interface Duration {

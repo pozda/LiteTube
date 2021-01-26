@@ -9,7 +9,10 @@
         "browser": true,
         "node": true
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": [
+        "@typescript-eslint",
+        "react"
+    ],
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
@@ -19,20 +22,66 @@
             "pragma": "React",
             "version": "detect"
         },
-        "linkComponents": ["Hyperlink", {"name": "Link", "linkAttribute": "to"}]
+        "linkComponents": [
+            "Hyperlink",
+            {
+                "name": "Link",
+                "linkAttribute": "to"
+            }
+        ]
     },
     "rules": {
-        "semi": ["error", "never"],
-        "quotes": [2, "single"],
-        "indent": ["error", 4],
-        "no-console": ["warn"],
-        "comma-dangle": ["error", "never"],
-        "quote-props": ["error", "as-needed"],
-        "eol-last": ["warn", "never"],
-        "arrow-body-style": ["error", "as-needed"],
-        "max-len": ["warn", {"code": 120}],
-        "object-curly-spacing": ["warn", "never"],
-        "no-invalid-this": ["off"],
-        "no-unused-vars":["warn"]
+        "semi": [
+            "error",
+            "never"
+        ],
+        "quotes": [
+            2,
+            "single"
+        ],
+        "indent": [
+            "error",
+            4
+        ],
+        "no-console": [
+            "warn"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "quote-props": [
+            "error",
+            "as-needed"
+        ],
+        "eol-last": [
+            "warn",
+            "never"
+        ],
+        "arrow-body-style": [
+            "error",
+            "as-needed"
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 120
+            }
+        ],
+        "object-curly-spacing": [
+            "warn",
+            "never"
+        ],
+        "no-invalid-this": [
+            "off"
+        ],
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "@typescript-eslint/no-unused-vars": [
+            2,
+            {
+                "args": "none"
+            }
+        ]
     }
 }
